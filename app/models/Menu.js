@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const {ParentMenu} = require('../../seed/Enum')
+const {ParentMenu} = require('../../seed/constants')
 const schema = new Schema({
   name: {
     type: String,

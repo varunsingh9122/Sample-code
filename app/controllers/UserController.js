@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const createError = require('http-errors')
 
 const UserSchema = require('../models/Users');
-const UserService = require('../services/UserServices')
+const UserService = require('../services/userServices')
 const {authSchema, authLoginSchema} = require('../helpers/validation_schema')
 
 const {
@@ -88,9 +88,6 @@ module.exports = {
           console.log("Pushing user to db", result)
           const user = new UserSchema(result)
           const savedUser = await user.save()
-
-          // const accessToken = await signAccessToken(savedUser.id)
-          // const refreshToken = await signRefreshToken(savedUser.id)
     
           res.json(
             { 

@@ -38,7 +38,7 @@ const schema = new Schema({
   },
   refBy : { 
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'user'
   }
 }, {
   timestamps: true

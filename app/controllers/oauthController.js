@@ -1,7 +1,6 @@
 const createError = require('http-errors');
 const UserSchema = require('../models/Users');
 const bcrypt = require('bcrypt')
-const mongoose = require('mongoose');
 
 const {authSchema, authLoginSchema} = require('../helpers/validation_schema')
 

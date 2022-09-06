@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const createError = require('http-errors')
 
-const RegEnquirySchema = require('../models/RegEnquiry');
+const RegEnquirySchema = require('../models/regEnquiry');
 const { RegEnquiry } = require('../helpers/validation_schema');
 const User = require('../models/Users');
 

@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 const createError = require('http-errors')
 
-const HomeContentSchema = require('../models/HomeContent');
+const HomeContentSchema = require('../models/homeContent');
 const { homeContentSchema } = require('../helpers/validation_schema');
-const User = require('../models/Users');
 
 module.exports = {
     GetAll : (req, res, next) => {

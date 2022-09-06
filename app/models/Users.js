@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
-const {UserRole} = require('../../seed/Enum')
+const {UserRole} = require('../../seed/constants')
 
 const UserSchema = new Schema({
   email: {
@@ -34,7 +34,6 @@ const UserSchema = new Schema({
     enum : UserRole 
     // ['Admin', 'Team', 'User']
   }
-
 })
 
 UserSchema.pre('save', async function (next) {

@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const createError = require('http-errors')
 
-const MenuSchema = require('../models/Menu');
+const MenuSchema = require('../models/menu');
 const { menuSchema } = require('../helpers/validation_schema');
-const User = require('../models/Users');
-const {ParentMenu} = require('../../seed/Enum')
+const {ParentMenu} = require('../../seed/constants')
 const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
