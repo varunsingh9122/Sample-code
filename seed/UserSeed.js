@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var UserSchema = require('../app/models/users/Users');
+var UserSchema = require('../app/models/Users');
 
 module.exports = {
     AdminUser : (req, res, next) => {
@@ -7,9 +7,9 @@ module.exports = {
         const adminUser = {
             email : 'varunsingh91@live.com',
             password : "varunsingh",
-            f_name : "Varun",
-            m_name : "",
-            l_name : "Singh",
+            fName : "Varun",
+            mName : "",
+            lName : "Singh",
             _role : "Admin",
             contact : "8744880990"
         };

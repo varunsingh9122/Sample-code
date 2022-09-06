@@ -3,9 +3,9 @@ const Joi = require('@hapi/joi')
 const authSchema = Joi.object({
   email: Joi.string().email().lowercase().required(),
   password: Joi.string().min(2).required(),
-  f_name : Joi.string().min(3).required(),
-  m_name : Joi.string().allow(''),
-  l_name : Joi.string().allow(''),
+  fName : Joi.string().min(3).required(),
+  mName : Joi.string().allow(''),
+  lName : Joi.string().allow(''),
   contact : Joi.string().required().min(10).max(12),
   _role : Joi.required()
 })
@@ -38,11 +38,11 @@ const customerSchema = Joi.object({
 
 const menuSchema = Joi.object({
   name : Joi.string().required(),
-  p_name : Joi.string().required(),
+  pName : Joi.string().required(),
 
 })
 
-const homePageSchema = Joi.object({
+const homeContentSchema = Joi.object({
   description : Joi.string().required()
 })
 
@@ -63,6 +63,6 @@ module.exports = {
   customerSchema,
   roleSchema,
   menuSchema,
-  homePageSchema,
+  homeContentSchema,
   RegEnquiry
 }

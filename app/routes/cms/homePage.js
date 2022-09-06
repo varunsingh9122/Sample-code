@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var HomePageController = require('../../controllers/cms/HomePageController');
+var HomeContentController = require('../../controllers/HomeContentController');
 const permits = require('../../middleware/oauthorization');
 
-router.get('/', HomePageController.GetAll)
+router.get('/', HomeContentController.GetAll)
 
-router.patch('/', permits('Admin'), HomePageController.UpdateOne);
+router.patch('/', permits('Admin'), HomeContentController.UpdateOne);
 
 module.exports = router;

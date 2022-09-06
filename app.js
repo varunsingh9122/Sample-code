@@ -31,12 +31,16 @@ app.use((res, req, next) => {
     next();
 });
 
+// for parsing application/json
 app.use(bodyParser.json());
+// for parsing application/xwww-
 app.use(bodyParser.urlencoded({ extended: false }));
+//form-urlencoded
+
 app.use(cookieParser())
 
 // app.use('/api/v1/users', users);
-app.use('/api/v1', require('./app/routes'))
+app.use('/api', require('./app/routes'))
 
 app.use(async (req, res, next) => {
     next(createError.NotFound())
