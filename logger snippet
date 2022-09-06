@@ -1,0 +1,25 @@
+app.use((req, res, next) => {
+    const defaultWrite = res.write.bind(res);
+    const defaultEnd = res.end.bind(res);
+    const ps = new PassThrough();
+    const chunks = [];
+
+    ps.on('data', data => chunks.push(data));
+
+    res.write = (...args) => {
+        ps.write(...args);
+        defaultWrite(...args);
+    }
+
+    res.end = (...args) => {
+        ps.end(...args);
+        defaultEnd(...args);
+    }
+
+    res.on('finish', () => {
+        console.log("req.body", req.body);
+        console.log("res.body", Buffer.concat(chunks).toString());
+    })
+
+    next();
+})
